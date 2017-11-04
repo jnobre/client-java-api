@@ -1,10 +1,10 @@
 package main;
 
-import rest.JSONParsing;
 import textSearch.TextSearchConn;
 import utils.Constants;
 import classes.TextSearchResponse;
 import enumerations.JSONClasses;
+import json.JSONParsing;
 
 public class Main {
 

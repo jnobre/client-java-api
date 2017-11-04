@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import rest.JSONParsing;
 import textSearch.TextSearchConn;
 import utils.Constants;
 import classes.TextSearchResponse;
 import enumerations.JSONClasses;
+import json.JSONParsing;
 
 public class GetVersions {
 

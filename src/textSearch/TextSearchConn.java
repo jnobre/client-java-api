@@ -3,7 +3,6 @@ package textSearch;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import rest.RestClient;
 import utils.Constants;
 
 public class TextSearchConn {
@@ -38,7 +37,7 @@ public class TextSearchConn {
 	 * @return
 	 */
 	public static String getCustomUrl(String url) {
-		String response = RestClient.executeHttpGet(Constants.API + url);				
+		String response = TextSearchClient.executeHttpGet(Constants.API + url);				
 		return response;
 	}
 	
