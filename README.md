@@ -1,10 +1,10 @@
-# Requirements
+## Requirements
 
 [Eclipse](http://www.eclipse.org) as IDE (if you want to use another, you must adapt the following instructions)
 
 OR use javac
 
-# Instructions for importing the library
+## Instructions for importing the library
 
 1. In Eclipse (or the IDE to choose), create a new project (File -> New -> Java Project);
 
@@ -15,7 +15,7 @@ OR use javac
 3. **NOTE**: If you encounter multiple Class Not Found errors, make sure that the Libraries in the libs folder are in the Build Path of the project.
 	
 
-# Use
+## Use
  
 To use the created API, you can refer to the Main.java file in the package main to see some examples.
 
