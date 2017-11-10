@@ -27,7 +27,7 @@ String versionsSTR = TextSearchConn.getVersions( Constants.queryTestSimple , 0 ,
 System.out.println( versionsSTR );
 ```
 
-#Libraries used 
+## Libraries used 
 
 * [GSON](http://code.google.com/p/google-gson/)
 * [HTTP Client 4.2.3 Apache](http://hc.apache.org/downloads.cgi)
