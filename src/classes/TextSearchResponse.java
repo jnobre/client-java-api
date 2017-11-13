@@ -8,9 +8,11 @@ public class TextSearchResponse {
 	
 	private String serviceName;
 	private String linkToService;
-	@SerializedName( "request-parameters" ) 
+	private String next_page;
+	private String previous_page;
+	@SerializedName( "request_parameters" ) 
 	private TextSearchRequestParameters requestParameters; //request input parameters
-	@SerializedName( "response-items" )
+	@SerializedName( "response_items" )
 	private List<Item> itens;
 
 	
@@ -45,10 +47,29 @@ public class TextSearchResponse {
 		this.requestParameters = requestParameters;
 	}
 
-	@Override
-	public String toString() {
-		return "OpenSearchResponse [serviceName=" + serviceName + ", linkToService=" + linkToService
-				+ ", requestParameters=" + requestParameters + ", itens=" + itens + "]";
+	public String getNext_page() {
+		return next_page;
 	}
+
+	public void setNext_page(String next_page) {
+		this.next_page = next_page;
+	}
+
+	public String getPrevious_page() {
+		return previous_page;
+	}
+
+	public void setPrevious_page(String previous_page) {
+		this.previous_page = previous_page;
+	}
+
+	@Override
+	public String toString( ) {
+		return "TextSearchResponse [serviceName=" + serviceName + ", linkToService=" + linkToService + ", next_page="
+				+ next_page + ", previous_page=" + previous_page + ", requestParameters=" + requestParameters
+				+ ", itens=" + itens + "]";
+	}
+
+	
 
 }

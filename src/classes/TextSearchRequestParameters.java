@@ -4,8 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class TextSearchRequestParameters {
 	
-	@SerializedName( "q" ) 
+	@SerializedName( "q" )
 	private String queryTerms;
+	@SerializedName( "offset" )
 	private int start;
 	private int limit;
 	private int limitPerSite;
@@ -13,11 +14,13 @@ public class TextSearchRequestParameters {
 	private String from;
 	private String to;
 	private String type;
+	@SerializedName( "siteSearch" )
 	private String site;
 	private String prettyPrint;
 	
 	public TextSearchRequestParameters( ) { }
 	
+
 	public String getQueryTerms() {
 		return queryTerms;
 	}
@@ -88,6 +91,7 @@ public class TextSearchRequestParameters {
 	public void setPrettyPrint(String prettyPrint) {
 		this.prettyPrint = prettyPrint;
 	}
+
 
 	@Override
 	public String toString() {

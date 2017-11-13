@@ -9,8 +9,12 @@ import enumerations.JSONClasses;
 import json.JSONParsing;
 
 public class Main {
-
-	public static void main(String[] args) {
+	
+	/**
+	 * Main method
+	 * @param args
+	 */
+	public static void main( String[ ] args ) {
 		System.out.println( "---> getTitleFirsttVersion() <---" );
 		getTitleFirsttVersion( );
 		System.out.println( "\n\n---> getFirstVersionEuro() <---" );
@@ -99,9 +103,10 @@ public class Main {
 		int limit = 10;
 		boolean prettyPrint = true;
 		String versionsSTR = TextSearchConn.getVersions( Constants.queryTestJSON , 0 , limit , prettyPrint );
-		
-		System.out.println( versionsSTR );
-		
+		if( versionsSTR == null || versionsSTR.equals( "" ) )
+			System.out.println( "Could not find versions for search." );
+		else
+			System.out.println( versionsSTR );
 	}
 	
 }
