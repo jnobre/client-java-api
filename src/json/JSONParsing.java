@@ -1,6 +1,5 @@
 package json;
 
-import classes.TextSearchRequestParameters;
 import classes.TextSearchResponse;
 
 import com.google.gson.*;
