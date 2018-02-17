@@ -1,7 +1,7 @@
 
 # TextSearch Client
 
-<a href="https://drive.google.com/open?id=1dkOLEoqsu0nVJKiNp-ASnY5iuPDrd5Mq"><img src="https://drive.google.com/open?id=1dkOLEoqsu0nVJKiNp-ASnY5iuPDrd5Mq"></a>
+<a href="https://media.giphy.com/media/3Os1L1G0VKLzKdaKLz/giphy.gif"><img src="https://media.giphy.com/media/3Os1L1G0VKLzKdaKLz/giphy.gif"></a>
 
 
 ## Requirements
