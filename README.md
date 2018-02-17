@@ -38,6 +38,3 @@ System.out.println( versionsSTR );
 * [GSON](http://code.google.com/p/google-gson/)
 * [HTTP Client 4.2.3 Apache](http://hc.apache.org/downloads.cgi)
 * [Junit](https://github.com/junit-team/junit)
-
-
-480 x 264 px
