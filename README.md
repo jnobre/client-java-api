@@ -1,7 +1,7 @@
 
 # TextSearch Client
 
-<a href="http://gph.is/2ExA8Vm"><img src="http://gph.is/2ExA8Vm"></a>
+<a href="https://media.giphy.com/media/cdXgU3mIhVTgXdHzA2/source.gif"><img src="https://media.giphy.com/media/cdXgU3mIhVTgXdHzA2/source.gif"></a>
 
 
 ## Requirements
