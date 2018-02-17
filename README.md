@@ -1,5 +1,5 @@
 
-# TextSearch Client
+# TextSearch API Client
 
 <a href="https://media.giphy.com/media/cdXgU3mIhVTgXdHzA2/source.gif"><img src="https://media.giphy.com/media/cdXgU3mIhVTgXdHzA2/source.gif"></a>
 
