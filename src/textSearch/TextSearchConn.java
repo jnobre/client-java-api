@@ -22,7 +22,7 @@ public class TextSearchConn {
 			System.out.println( "Unsupported Encoding" );
 			return null;
 		}
-		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&limit=" + limit + "&offset=" + offset );
+		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&maxItems=" + limit + "&offset=" + offset );
 		return response;
 	}
 	
@@ -43,31 +43,11 @@ public class TextSearchConn {
 			System.out.println( "Unsupported Encoding" );
 			return null;
 		}
-		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&limit=" + limit + "&offset=" + offset + "&from=" + from + "&to=" + to );
+		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&maxItems=" + limit + "&offset=" + offset + "&from=" + from + "&to=" + to );
 		return response;
 	}
 	
-	/**
-	 * Get the *limit* results for the query *q*, between the *from* and the *to*, increasing order
-	 * @param q
-	 * @param offset
-	 * @param limit
-	 * @param from
-	 * @param to
-	 * @param sort
-	 * @return
-	 */
-	public static String getVersions( String q, int offset, int limit, String from, String to , String sort ){
-		String encodeQuery;
-		try {
-			encodeQuery = URLEncoder.encode( q, "UTF-8" ).replace( "+", "%20" );
-		} catch (UnsupportedEncodingException e) {
-			System.out.println( "Unsupported Encoding" );
-			return null;
-		}
-		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&limit=" + limit + "&offset=" + offset + "&from=" + from + "&to=" + to + "&sort=" + sort );
-		return response;
-	}
+
 	
 	/**
 	 * Get json
@@ -85,7 +65,45 @@ public class TextSearchConn {
 			System.out.println( "Unsupported Encoding" );
 			return null;
 		}
-		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&limit=" + limit + "&offset=" + offset + "&prettyPrint=" + prettyPrint );
+		String response = TextSearchClient.executeHttpGet( Constants.API + "?q=" + encodeQuery + "&maxItems=" + limit + "&offset=" + offset + "&prettyPrint=" + prettyPrint );
+		return response;
+	}
+	
+	/**
+	 * Get URL versions 
+	 * @param versionHistory
+	 * @param offset
+	 * @param limit
+	 * @param prettyPrint
+	 * @return
+	 */
+	public static String getURLVersions( String versionHistory, int offset, int limit , boolean prettyPrint ){
+		String encodeQuery;
+		try {
+			encodeQuery = URLEncoder.encode( versionHistory, "UTF-8" ).replace( "+", "%20" );
+		} catch (UnsupportedEncodingException e) {
+			System.out.println( "Unsupported Encoding" );
+			return null;
+		}
+		String response = TextSearchClient.executeHttpGet( Constants.API + "?versionHistory=" + encodeQuery + "&maxItems=" + limit + "&offset=" + offset + "&prettyPrint=" + prettyPrint );
+		return response;
+	}
+	
+	/**
+	 * Get metadata info
+	 * @param metadata
+	 * @param prettyPrint
+	 * @return
+	 */
+	public static String getMetadataInfo( String metadata , boolean prettyPrint ){
+		String encodeQuery;
+		try {
+			encodeQuery = URLEncoder.encode( metadata, "UTF-8" ).replace( "+", "%20" );
+		} catch ( UnsupportedEncodingException e ) {
+			System.out.println( "Unsupported Encoding" );
+			return null;
+		}
+		String response = TextSearchClient.executeHttpGet( Constants.API + "?metadata=" + encodeQuery + "&prettyPrint=" + prettyPrint );
 		return response;
 	}
 	

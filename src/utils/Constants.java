@@ -2,7 +2,7 @@ package utils;
 
 public class Constants {
 
-	public static final String API = "http://p18.arquivo.pt/textsearch";
+	public static final String API = "http://preprod.arquivo.pt/textsearch";
 	
 	public static final String queryTestSimple = "Antonio Costa Ministro";
 	
@@ -13,5 +13,9 @@ public class Constants {
 	public static final String queryTestJSON = "Fernando Pessoa";
 	
 	public static final String queryTestNewest = "Edith Piaf";
+	
+	public static final String queryURLSearch= "http://www.expresso.pt";
+	
+	public static final String queryTextExtracted = "http://www.rr.pt//20040627082547";
 	
 }

@@ -3,6 +3,10 @@ package main;
 import textSearch.TextSearchConn;
 import utils.Constants;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
+
 import classes.Item;
 import classes.TextSearchResponse;
 import enumerations.JSONClasses;
@@ -21,10 +25,14 @@ public class Main {
 		getFirstVersionEuro( );
 		System.out.println( "\n\n---> getFiveVersion() <---" );
 		getFiveVersion( );
-		System.out.println( "\n\n---> getNewestVersion() <---" );
-		getNewestVersion( );
 		System.out.println( "\n\n---> getJSONResponse() <---" );
 		getJSONResponse( );
+		System.out.println( "\n\n---> getURLVersions() <---" );
+		getURLVersions( );
+		System.out.println( "\n\n---> getTextExtracted() <---" );
+		getTextExtracted( );
+		System.out.println( "\n\n---> getTotalVersion() <---" );
+		getTotalVersion( );
 	}
 	
 	/**
@@ -79,21 +87,50 @@ public class Main {
 	}
 	
 	/**
-	 * Get the most recent item from 2005 with the terms "Edith Piaf"
+	 * Get first 30 Timestamp version of the http://www.expresso.pt URL
 	 */
-	private static void getNewestVersion( ){
-		int limit = 1;
-		String from = "2005";
-		String to = "2005";
-		String order = "new";
-		String versionsSTR = TextSearchConn.getVersions( Constants.queryTestNewest , 0 , limit , from , to , order );
-		TextSearchResponse versions = (TextSearchResponse) JSONParsing.parsed( versionsSTR, JSONClasses.Response ); 
+	private static void getURLVersions( ){
+		int limit = 40;
+		String versionsSTR = TextSearchConn.getURLVersions( Constants.queryURLSearch ,  0 , limit, false);
+		TextSearchResponse versions = (TextSearchResponse) JSONParsing.parsed( versionsSTR, JSONClasses.Response );
 		
-		if( versions == null || versions.getItens() == null || versions.getItens( ).size( ) == 0 )
-			System.out.println( "Could not find versions for search." );
-		else
-			System.out.println( "Source:" + versions.getItens().get( 0 ).getSource( ) + "  Timestamp:" + versions.getItens().get( 0 ).getTstamp( ) );
-
+		for( Item version : versions.getItens( ) ) {
+			System.out.println( "Timestamp:" + version.getTstamp( ) +  " Title:" + version.getTitle( ) );
+		}
+	}
+	
+	/**
+	 * Get the text extracted from the site rr.pt in the version of 20040627082547
+	 */
+	private static void getTextExtracted( ) {
+		String versionsSTR = TextSearchConn.getMetadataInfo( Constants.queryTextExtracted , false);
+		TextSearchResponse versions = (TextSearchResponse) JSONParsing.parsed( versionsSTR, JSONClasses.Response );
+		
+		try {
+			System.out.println( versions.getItens( ).get( 0 ).getParseText( )  );
+			URL url = new URL( versions.getItens( ).get( 0 ).getParseText( ) );
+			Scanner sc = new Scanner( url.openStream( ), "UTF-8" ); // read from your scanner
+			while ( sc.hasNextLine( ) ) {
+				String line = sc.nextLine( );
+				System.out.println( line );
+			}
+		} catch( IOException ex ) {
+		   // there was some connection problem, or the file did not exist on the server,
+		   // or URL was not in the right format.
+		   ex.printStackTrace( ); // for now, simply output it.
+		}
+		
+	}
+	
+	/**
+	 * Get total preserved versions of the web page expresso.pt
+	 */
+	private static void getTotalVersion( ){
+		int limit = 1;
+		String versionsSTR = TextSearchConn.getURLVersions( Constants.queryURLSearch ,  0 , limit, false);
+		TextSearchResponse versions = (TextSearchResponse) JSONParsing.parsed( versionsSTR, JSONClasses.Response );
+		
+		System.out.println( "Total Items:" + versions.getTotalItems( ) );
 	}
 	
 	/**

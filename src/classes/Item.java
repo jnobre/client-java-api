@@ -3,25 +3,38 @@ package classes;
 import com.google.gson.annotations.SerializedName;
 
 public class Item {
-	@SerializedName( "ID" )
+	@SerializedName( "versionID" )
 	private String key;
-	@SerializedName( "htmlTitle" )
+	@SerializedName( "title" )
 	private String title;
+	@SerializedName( "originalURL" )
 	private String source;
+	@SerializedName( "linkToArchive" )
 	private String link;
 	private String tstamp;
 	private String contentLength;
 	private String digest;
-	private String primaryType;
-	private String subType;
+	private String mimeType;
+	@SerializedName( "linkToScreenshot" )
 	private String screenShotLink;
+	@SerializedName( "linkToExtractedText" )
 	private String itemText;
 	private String date; //epoch format
 	private String encoding;
-	//details
-	private String arcname;
-	private String arcoffset;
+	@SerializedName( "linkToNoFrame" )
+	private String noFrameLink;
+	@SerializedName( "snippet" )
+	private String snippetForTerms;
+	private String status;
 	private String collection;
+	@SerializedName( "extractedText" )
+	private String parseText;
+	
+	//details
+	@SerializedName( "filename" )
+	private String arcname;
+	@SerializedName( "offset" )
+	private String arcoffset;
 	private String idDoc;
 	private String index;
 	private String segment;
@@ -71,18 +84,7 @@ public class Item {
 	public void setDigest(String digest) {
 		this.digest = digest;
 	}
-	public String getPrimaryType() {
-		return primaryType;
-	}
-	public void setPrimaryType(String primaryType) {
-		this.primaryType = primaryType;
-	}
-	public String getSubType() {
-		return subType;
-	}
-	public void setSubType(String subType) {
-		this.subType = subType;
-	}
+
 	public String getScreenShotLink() {
 		return screenShotLink;
 	}
@@ -143,16 +145,46 @@ public class Item {
 	public void setSegment(String segment) {
 		this.segment = segment;
 	}
+	public String getNoFrameLink() {
+		return noFrameLink;
+	}
+	public void setNoFrameLink(String noFrameLink) {
+		this.noFrameLink = noFrameLink;
+	}
+	public String getMimeType() {
+		return mimeType;
+	}
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+	public String getSnippetForTerms() {
+		return snippetForTerms;
+	}
+	public void setSnippetForTerms(String snippetForTerms) {
+		this.snippetForTerms = snippetForTerms;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getParseText() {
+		return parseText;
+	}
+	public void setParseText(String parseText) {
+		this.parseText = parseText;
+	}
 
 	@Override
 	public String toString() {
 		return "Item [key=" + key + ", title=" + title + ", source=" + source + ", link=" + link + ", tstamp=" + tstamp
-				+ ", contentLength=" + contentLength + ", digest=" + digest + ", primaryType=" + primaryType
-				+ ", subType=" + subType + ", screenShotLink=" + screenShotLink + ", itemText=" + itemText + ", date="
-				+ date + ", encoding=" + encoding + ", arcname=" + arcname + ", arcoffset=" + arcoffset
-				+ ", collection=" + collection + ", idDoc=" + idDoc + ", index=" + index + ", segment="+ segment +"]";
+				+ ", contentLength=" + contentLength + ", digest=" + digest + ", mimeType=" + mimeType
+				+ ", screenShotLink=" + screenShotLink + ", itemText=" + itemText + ", date=" + date + ", encoding="
+				+ encoding + ", noFrameLink=" + noFrameLink + ", snippetForTerms=" + snippetForTerms + ", status="
+				+ status + ", collection=" + collection + ", parseText=" + parseText + ", arcname=" + arcname
+				+ ", arcoffset=" + arcoffset + ", idDoc=" + idDoc + ", index=" + index + ", segment=" + segment + "]";
 	}
-
-
-
+	
+	
 }
