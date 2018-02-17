@@ -1,7 +1,7 @@
 
 # TextSearch Client
 
-<a href="https://media.giphy.com/media/3Os1L1G0VKLzKdaKLz/giphy.gif"><img src="https://media.giphy.com/media/3Os1L1G0VKLzKdaKLz/giphy.gif"></a>
+<a href="http://gph.is/2ExA8Vm"><img src="http://gph.is/2ExA8Vm"></a>
 
 
 ## Requirements
@@ -38,3 +38,6 @@ System.out.println( versionsSTR );
 * [GSON](http://code.google.com/p/google-gson/)
 * [HTTP Client 4.2.3 Apache](http://hc.apache.org/downloads.cgi)
 * [Junit](https://github.com/junit-team/junit)
+
+
+480 x 264 px
