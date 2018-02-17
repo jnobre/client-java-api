@@ -107,7 +107,6 @@ public class Main {
 		TextSearchResponse versions = (TextSearchResponse) JSONParsing.parsed( versionsSTR, JSONClasses.Response );
 		
 		try {
-			System.out.println( versions.getItens( ).get( 0 ).getParseText( )  );
 			URL url = new URL( versions.getItens( ).get( 0 ).getParseText( ) );
 			Scanner sc = new Scanner( url.openStream( ), "UTF-8" ); // read from your scanner
 			while ( sc.hasNextLine( ) ) {
